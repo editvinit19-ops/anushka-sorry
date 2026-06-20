@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I'm Sorry, Anushka</title>
+    <style>
+        body { margin: 0; font-family: 'Arial', sans-serif; background: #ffe6ea; color: #555; text-align: center; }
+        .page { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; transition: opacity 1s; }
+        h1 { color: #d63384; }
+        .teddy { font-size: 80px; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        button { background: #d63384; color: white; border: none; padding: 15px 30px; border-radius: 25px; cursor: pointer; font-size: 18px; margin-top: 20px; }
+        .letter { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 600px; }
+    </style>
+</head>
+<body>
+
+<!-- Page 1: Greeting -->
+<div id="p1" class="page">
+    <div class="teddy">🧸</div>
+    <h1>I am so sorry, Anushka.</h1>
+    <p>I know I hurt you on your special day, and I haven't been able to forgive myself since.</p>
+    <button onclick="next(2)">Read my apology</button>
+</div>
+
+<!-- Page 2: The Heartfelt Letter -->
+<div id="p2" class="page" style="display:none;">
+    <div class="letter">
+        <h2>To My Dearest Anushka,</h2>
+        <p>Your birthday should have been the happiest day, and I am deeply sorry that I was the reason it wasn't. Please forgive me for my mistake.</p>
+        <button onclick="next(3)">Continue</button>
+    </div>
+</div>
+
+<!-- Page 3: Expressing Regret -->
+<div id="p3" class="page" style="display:none;">
+    <div class="letter">
+        <h2>I Miss You</h2>
+        <p>The silence between us has been the hardest thing to bear. I value you more than I can say, and I truly hope you can give me a chance to make things right.</p>
+        <button onclick="next(4)">Final Request</button>
+    </div>
+</div>
+
+<!-- Page 4: Closing -->
+<div id="p4" class="page" style="display:none;">
+    <h1>Will you please talk to me?</h1>
+    <p>I promise to do better. You mean the world to me.</p>
+    <div class="teddy">🧸💖</div>
+</div>
+
+<script>
+    function next(n) {
+        document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+        document.getElementById('p' + n).style.display = 'flex';
+    }
+</script>
+</body>
+</html>
